@@ -1,4 +1,4 @@
-from Check_Hand import check_hand, comparison_hands
+from .Check_Hand import check_hand, comparison_hands
 
 
 # 上段の点数計算

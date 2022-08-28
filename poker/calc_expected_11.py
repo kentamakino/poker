@@ -1,8 +1,8 @@
 import itertools
 import random
 
-from Cal_Score import calc_score
-import util
+from .Cal_Score import calc_score
+from . import util
 
 
 def calc_expected_score(cards):

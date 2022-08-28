@@ -48,18 +48,18 @@ def test_get_cards_with_position():
 
 
 def test_get_possible_next_hands_num():
-    assert list_possible_next_hands(51) == 1
-    assert list_possible_next_hands(48) == 20
-    assert list_possible_next_hands(10) == 13244
+    assert get_possible_next_hands_num(51) == 1
+    assert get_possible_next_hands_num(48) == 20
+    assert get_possible_next_hands_num(10) == 13244
 
 
 def test_list_possible_next_hands():
     used_cards = list(range(40))
     hand_count = 0
-    for hand in get_possible_next_hands_num(used_cards):
+    for hand in list_possible_next_hands(used_cards):
         assert len(hand) == 3
         assert min(hand) >= 40
         assert max(hand) <= 54
         hand_count += 1
 
-    assert hand_count == list_possible_next_hands(len(used_cards))
+    assert hand_count == get_possible_next_hands_num(len(used_cards))
