@@ -36,12 +36,19 @@ def get_suite_name(number):
         return "Diamonds"
 
 
-def list_possible_next_hands(used_card_num, *, num_hands=3):
+def convert_number_to_card(number):
+    return {
+        "number": get_card_number(number),
+        "symbol": get_suite_name(number)
+    }
+
+
+def get_possible_next_hands_num(used_card_num, *, num_hands=3):
     num_deck_cards = len(DECK) - used_card_num
     return int(math.factorial(num_deck_cards) / math.factorial(num_deck_cards - num_hands) / math.factorial(num_hands))
 
 
-def get_possible_next_hands_num(used_card_list, *, num_hands=3):
+def list_possible_next_hands(used_card_list, *, num_hands=3):
     current_deck = set(DECK) - set(used_card_list)
     for hand in itertools.combinations(current_deck, num_hands):
         yield hand

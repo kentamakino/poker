@@ -42,7 +42,7 @@ def score_bottom(card_bottom_strength):
     return score_bottom_table[card_bottom_strength]
 
 
-def calc_score(top_card, middle_card, bottom_card):
+def calc_score(card_top, card_middle, card_bottom):
     if comparison_hands(card_top, card_middle) and comparison_hands(card_middle, card_bottom):
         score_total = score_top(check_hand(card_top)[2]) + score_middle(check_hand(card_middle)[1]) + score_bottom(
             check_hand(card_bottom)[1])

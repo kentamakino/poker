@@ -47,13 +47,13 @@ def test_get_cards_with_position():
         assert len([v for v in cards if v < 0]) == 15 - num_cards
 
 
-def test_list_possible_next_hands():
+def test_get_possible_next_hands_num():
     assert list_possible_next_hands(51) == 1
     assert list_possible_next_hands(48) == 20
     assert list_possible_next_hands(10) == 13244
 
 
-def test_get_possible_next_hands_num():
+def test_list_possible_next_hands():
     used_cards = list(range(40))
     hand_count = 0
     for hand in get_possible_next_hands_num(used_cards):
